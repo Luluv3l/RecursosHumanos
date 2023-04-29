@@ -1,0 +1,144 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:400,500,500i,700,800i" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link href="~/Recursos/css/sistema.css" rel="stylesheet" />
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+    <link href="~/Recursos/css/footer.css" rel="stylesheet" />
+    <link href="~/Recursos/css/fondo2.css" rel="stylesheet" />
+</head>
+
+
+<body>
+
+
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark" style="background: linear-gradient(90deg, #004E8F 0%, #72C6EF 100%) ">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" href="">PLANILLAS <span class="sr-only">(current)</span></a>
+                </li>
+
+                <li class="nav-item dropdown dmenu">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                        Mantenimientos
+                    </a>
+                    <div class="dropdown-menu sm-menu">
+                        <a class="dropdown-item" href="@Url.Action("Create","colaboradores")">Personal</a>
+                        <a class="dropdown-item" href="@Url.Action("Create","usuarios")">Usuarios</a>
+                    </div>
+
+                </li>
+
+                <li class="nav-item dropdown dmenu">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                        Transacciones
+                    </a>
+                    <div class="dropdown-menu sm-menu">
+                        <a class="dropdown-item" href="@Url.Action("Create","planilla")">Generar Planilla</a>
+                        @*<a class="dropdown-item" href="@Url.Action("Create","deducciones")">Tramitar Deducciones</a>*@
+                        <a class="dropdown-item" href="@Url.Action("Create","horas_extras")">Tramitar Horas Extra</a>
+                        <a class="dropdown-item" href="@Url.Action("Create","incapacidades")">Tramitar Inacapaciades</a>
+                        @* <a class="dropdown-item" href="@Url.Action("Create","liquidaciones")">Tramitar Liquidaciones</a>*@
+                        <a class="dropdown-item" href="@Url.Action("Create","permisos")">Tramitar Permisos</a>
+                        <a class="dropdown-item" href="@Url.Action("Create","vacaciones")">Tramitar Vacaciones</a>
+                    </div>
+                </li>
+
+                <li class="nav-item dropdown dmenu">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                        Consultas
+                    </a>
+                    <div class="dropdown-menu sm-menu">
+                        <a class="dropdown-item" href="@Url.Action("Details","colaboradores")">Colaborador</a>
+                        <a class="dropdown-item" href="@Url.Action("Details","usuarios")">Usuario</a>
+
+                        @*<a class="dropdown-item" href="@Url.Action("Details","horas_extras")">Horas Extras</a>
+                            <a class="dropdown-item" href="@Url.Action("Details","incapacidades")">Incapacidades</a>
+
+                            <a class="dropdown-item" href="@Url.Action("Details","liquidaciones")">Liquidaciones</a>
+                            <a class="dropdown-item" href="@Url.Action("Details","permisos")">Permisos</a>
+
+                            <a class="dropdown-item" href="@Url.Action("Details","vacaciones")">Vacaciones</a>*@
+
+                    </div>
+                </li>
+                <li class="nav-item dropdown dmenu">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                        Reportes
+                    </a>
+                    <div class="dropdown-menu sm-menu">
+                        <a class="dropdown-item" href="">Colaboradores</a>
+
+                    </div>
+                </li>
+
+
+
+            </ul>
+            <div class="social-part">
+                <a>@Html.ActionLink("Salir", "cerrarsesion", "sistema", new { area = "" }, new { @class = "nav-link" })</a>
+
+            </div>
+        </div>
+    </nav>
+
+    <h6 style="margin-top: 40px; margin-left: 40px; font-family: Arial, sans-serif; font-size: 20px; color: #2980B9; ">SISTEMA PLANILLAS</h6>
+    @*<div class="container text-center">
+            <img src="https://upload.wikimedia.org/wikipedia/en/5/53/LUMA_Energy_Logo.png" class="img-fluid" alt="Descripción de la imagen" style="margin-top: 300px;">
+        </div>*@
+    <div class="row mb-3">
+    </div>
+    <footer>
+        <div class="container">
+
+            <hr />
+            <div class="text-center center-block">
+                <p class="txt-railway"> www.lumakids.com </p>
+                <br />
+                <a href="https://www.facebook.com/bootsnipp"><i class="fa fa-facebook-square fa-3x social"></i></a>
+                <a href="https://twitter.com/bootsnipp"><i class="fa fa-twitter-square fa-3x social"></i></a>
+                <a href="https://plus.google.com/+Bootsnipp-page"><i class="fa fa-google-plus-square fa-3x social"></i></a>
+                <a href="mailto:bootsnipp@gmail.com"><i class="fa fa-envelope-square fa-3x social"></i></a>
+            </div>
+            <hr />
+        </div>
+    </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+
+
+        $(document).ready(function () {
+            $('.navbar-light .dmenu').hover(function () {
+                $(this).find('.sm-menu').first().stop(true, true).slideDown(150);
+            }, function () {
+                $(this).find('.sm-menu').first().stop(true, true).slideUp(105)
+            });
+        });
+    </script>
+
+</body>
+</html>
+

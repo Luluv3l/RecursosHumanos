@@ -1,0 +1,285 @@
+﻿@model List<Planilla.Models.planillas>
+
+
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Fonts -->
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600" rel="stylesheet" type="text/css">
+
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"></script>
+    <script src="https: //stackpath.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.bundle.min.js"></script>
+    <script src="https: //cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <link rel="icon" href="Favicon.png">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <link href="~/Recursos/css/table.css" rel="stylesheet" />
+    <link href="~/Recursos/css/fondo.css" rel="stylesheet" />
+    <title>permisos</title>
+</head>
+<body>
+    @Html.Partial("menubar")
+    <div class="row mb-3">
+
+    </div>
+    @if (TempData["SuccedMensaje"] != null)
+    {
+        <div class="alert alert-success">@TempData["SuccedMensaje"]</div>
+    }
+
+    @if (TempData["ErrorMensaje1"] != null)
+    {
+        <div class="alert alert-danger">@TempData["ErrorMensaje1"]</div>
+    }
+    @if (TempData["ErrorMensaje"] != null)
+    {
+        <div class="alert alert-info">@TempData["ErrorMensaje"]</div>
+    }
+    <main class="my-form">
+        <div class="container fluid">
+            <div class="row justify-content-center">
+                <div class="col-md-12">
+
+                </div>
+            </div>
+
+            <form action="@Url.Action("buscar", "planilla")" method="post" id="form1">
+                <div class="card text-center">
+                    <div class="card-header text-white" style="background-color: #2980B9; ">
+                        GENERAR PLANILLA
+                    </div>
+                    <div class="card-body">
+                        <div class="row mb-3">
+                            <label for="inputDate" class="col-sm-2 col-form-label">FECHA INICIO</label>
+                            <div class="col-sm-4">
+                                <input type="date" placeholder="dd-mm-yyyy" class="form-control" id="fecha_i" name="fecha_i" onchange="copiarFecha()" required>
+                            </div>
+                            <label for="inputDate" class="col-sm-2 col-form-label">FECHA FINAL</label>
+                            <div class="col-sm-4">
+                                <input type="date" placeholder="dd-mm-yyyy" class="form-control" id="fecha_f" name="fecha_f" onchange="copiarFecha()" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="phone_number" class="col-md-4 col-form-label text-md-right">TIPO PLANILLA</label>
+                            <div class="col-md-6">
+                                <select id="miDropdown" name="opcionSeleccionada7" class="form-control" onchange="copiarFecha()" required>
+                                    <option value="">SELECCIONE UNA OPCION</option>
+                                    <option value="1">SEMANAL</option>
+                                    <option value="2">QUINCENAL</option>
+                                    <option value="3">MENSUAL</option>
+
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="card-footer text-muted text-md-right">
+                            <button type="submit" class="btn btn-primary">OBTENER DATOS</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+
+            <div class="row mb-3"></div>
+
+
+            <div class="card text-center">
+                @*<div class="card-header">
+                        GENERAR PLANILLA
+                    </div>*@
+                <div class="card-body">
+
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Identificacion</th>
+                                    <th>Nombre</th>
+                                    <th>Primer Apellido</th>
+                                    <th>Segundo Apellido</th>
+                                    <th hidden>Fecha Ingreso</th>
+                                    <th hidden>id_tipoplanilla</th>
+                                    <th hidden>Planilla</th>
+                                    <th hidden>id_tipojornada</th>
+                                    <th>Jornada</th>
+                                    <th hidden>id_tipopuesto</th>
+                                    <th>Puesto</th>
+                                    <th>salario_bruto</th>
+                                    <th>monto_incapacidades</th>
+                                    <th>monto_permisos</th>
+                                    <th>monto_horas_extras</th>
+                                    <th>monto_vacaciones_remuneradas</th>
+                                    <th>deducciones_obligatorias</th>
+                                    <th>impuestos</th>
+                                    <th>salario_neto</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @if (Model != null)
+                                {
+                                    foreach (var item in Model)
+                                    {
+                                        <tr class="danger">
+
+                                            <td hidden>
+                                                @Html.DisplayFor(modelItem => item.id_colaborador)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.identificacion)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.nombre)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.apellido_1)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.apellido_2)
+                                            </td>
+                                            <td hidden>
+                                                @Html.DisplayFor(modelItem => item.fecha_ingreso)
+                                            </td>
+                                            <td hidden>
+                                                @Html.DisplayFor(modelItem => item.id_tipoplanilla)
+                                            </td>
+                                            <td hidden>
+                                                @Html.DisplayFor(modelItem => item.planilla)
+                                            </td>
+                                            <td hidden>
+                                                @Html.DisplayFor(modelItem => item.id_tipojornada)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.jornada)
+                                            </td>
+                                            <td hidden>
+                                                @Html.DisplayFor(modelItem => item.id_tipopuesto)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.puesto)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.salario_bruto)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.monto_incapacidades)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.monto_permisos)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.monto_horas_extras)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.monto_vacaciones_remuneradas)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.deducciones_obligatorias)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.impuestos_obligatorios)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.salario_neto)
+                                            </td>
+
+                                        </tr>
+                                    }
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <form action="@Url.Action("Create", "planilla")" method="post" id="form2">
+
+                    <input hidden type="date" name="date_i" id="date_i" value="" />
+                    <input hidden type="date" name="date_f" id="date_f" value="" />
+                    <input hidden type="text" name="list" id="list" value="" />
+
+                    <div class="card-footer text-muted text-md-right">
+                        <button type="submit" class="btn btn-danger">GENERAR PLANILLA</button>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+
+    </main>
+
+    <script>
+        function copiarFecha() {
+            var fecha1 = document.getElementById("fecha_i").value;
+            localStorage.setItem("fechaSeleccionada", fecha1);
+            document.getElementById("date_i").value = fecha1;
+
+            var fecha2 = document.getElementById("fecha_f").value;
+            localStorage.setItem("fechaSeleccionada1", fecha2);
+            document.getElementById("date_f").value = fecha2;
+
+            var select = document.getElementById("miDropdown").value;
+            localStorage.setItem("selectdd", select);
+            document.getElementById("list").value = select;
+
+        }
+
+        window.onload = function () {
+            var fechaSeleccionada = localStorage.getItem("fechaSeleccionada");
+            var fechaSeleccionada1 = localStorage.getItem("fechaSeleccionada1");
+            var selectdd = localStorage.getItem("selectd");
+
+            if (fechaSeleccionada) {
+                document.getElementById("date_1").value = fechaSeleccionada;
+            }
+            if (fechaSeleccionada1) {
+                document.getElementById("date_f").value = fechaSeleccionada1;
+            }
+            if (selectdd) {
+                document.getElementById("list").value = selectdd;
+            }
+
+        }
+
+        function cargarValoresPredeterminados() {
+            // Recuperar los valores del Local Storage
+            var fecha1 = localStorage.getItem("fechaSeleccionada");
+            var fecha2 = localStorage.getItem("fechaSeleccionada1");
+            var select = localStorage.getItem("selectdd");
+
+            // Establecer los valores predeterminados para los campos de entrada
+            //document.getElementById("fecha_i").value = fecha1;
+            document.getElementById("date_i").value = fecha1;
+            //document.getElementById("fecha_f").value = fecha2;
+            document.getElementById("date_f").value = fecha2;
+            //document.getElementById("miDropdown").value = select;
+            document.getElementById("list").value = select;
+        }
+
+        // Llamar la función al cargar la página
+        window.onload = cargarValoresPredeterminados;
+
+    </script>
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+</body>
+</html>
+

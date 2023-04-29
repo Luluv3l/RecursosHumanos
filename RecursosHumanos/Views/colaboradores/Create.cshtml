@@ -1,0 +1,198 @@
+﻿@model List<Planilla.Models.colaboradores>
+
+@{
+    Layout = null;
+}
+
+@*@{
+        ViewBag.titlle = "puestos";
+    }*@
+
+<!------ Include the above in your HEAD tag ---------->
+
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    \
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Fonts -->
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600" rel="stylesheet" type="text/css">
+
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+    <link rel="icon" href="Favicon.png">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <link href="~/Recursos/css/fondo2.css" rel="stylesheet" />
+    @*<link href="~/Recursos/css/fondo.css" rel="stylesheet" />*@
+    <title>nuevoregistro</title>
+
+</head>
+<body>
+    @Html.Partial("menubar")
+    <div class="row mb-3">
+    </div>
+
+    @if (TempData["SuccedMensaje"] != null)
+    {
+        <div class="alert alert-success">@TempData["SuccedMensaje"]</div>
+    }
+
+    @if (TempData["ErrorMensaje1"] != null)
+    {
+        <div class="alert alert-danger">@TempData["ErrorMensaje1"]</div>
+    }
+    @if (TempData["ErrorMensaje"] != null)
+    {
+        <div class="alert alert-info">@TempData["ErrorMensaje"]</div>
+    }
+    <main class="my-form">
+        <div class="container fluid">
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <div class="card">
+                        <div class="card-header text-white" style="background-color: #2980B9;">NUEVO INGRESO</div>
+                        <div class="card-body">
+                            <form name="my-form" onsubmit="return validform()" action="@Url.Action("Create","colaboradores")" method="post">
+
+
+                                <div class="form-group row">
+                                    <label for="email_address" class="col-md-4 col-form-label text-md-right">NÚMERO DE CÉDULA</label>
+                                    <div class="col-md-6">
+                                        <input type="number" id="cedula" class="form-control" name="identificacion" required>
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label for="email_address" class="col-md-4 col-form-label text-md-right">NOMBRE</label>
+                                    <div class="col-md-6">
+                                        <input type="text" id="nombre" class="form-control" name="nombre" @*oninput="soloLetras(this)"*@ required>
+
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label for="user_name" class="col-md-4 col-form-label text-md-right">PRIMER APELLIDO</label>
+                                    <div class="col-md-6">
+                                        <input type="text" id="apellido_1" class="form-control" name="apellido_1" @*oninput="soloLetras(this)"*@ required>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="user_name" class="col-md-4 col-form-label text-md-right">SEGUNDO APELLIDO</label>
+                                    <div class="col-md-6">
+                                        <input type="text" id="apellido_2" class="form-control" name="apellido_2" @*oninput="soloLetras(this)"*@ required>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="present_address" class="col-md-4 col-form-label text-md-right">E-MAIL </label>
+                                    <div class="col-md-6">
+                                        <input type="text" id="correo" class="form-control" name="correo" required>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="phone_number" class="col-md-4 col-form-label text-md-right">TELÉFONO</label>
+                                    <div class="col-md-6">
+                                        <input type="number" id="telefono" class="form-control" name="telefono" required>
+                                    </div>
+                                </div>
+
+
+                                <div class="form-group row">
+                                    <label for="phone_number" class="col-md-4 col-form-label text-md-right">PUESTO LABORAL</label>
+                                    <div class="col-md-6">
+                                        <select id="miDropdown" name="opcionSeleccionada" class="form-control" required>
+                                            <option value="">SELECCIONE UNA OPCION</option>
+                                            <option value="1">ASISTENTE ENFERMERIA</option>
+                                            <option value="2">ASISTENTE DOCTOR</option>
+                                            <option value="3">DOCTOR MEDICINA GENERAL </option>
+                                            <option value="4">DOCTOR GINECOLOGIA </option>
+                                            <option value="5">DOCTOR NEUROLOGIA </option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="phone_number" class="col-md-4 col-form-label text-md-right">TIPO PLANILLA</label>
+                                    <div class="col-md-6">
+                                        <select id="miDropdown1" name="opcionSeleccionada1" class="form-control" required>
+                                            <option value="">SELECCIONE UNA OPCION</option>
+                                            <option value="1">SEMANAL</option>
+                                            <option value="2">QUINCENAL</option>
+                                            <option value="3">MENSUAL</option>
+
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="phone_number" class="col-md-4 col-form-label text-md-right">JORNADA LABORAL</label>
+                                    <div class="col-md-6">
+                                        <select id="miDropdown2" name="opcionSeleccionada2" class="form-control" required>
+                                            <option value="">SELECCIONE UNA OPCION</option>
+                                            <option value="1">DIURNA</option>
+                                            <option value="2">MIXTA</option>
+                                            <option value="3">NOCTURNA</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label for="phone_number" class="col-md-4 col-form-label text-md-right">FECHA INGRESO</label>
+                                    <div class="col-md-6">
+                                        <input type="date" id="fecha" class="form-control" name="fecha" required>
+                                    </div>
+                                </div>
+
+                                @*<div class="form-group row">
+                                    <label for="permanent_address" class="col-md-4 col-form-label text-md-right">ESTADO</label>
+                                    <div class="col-md-6">
+                                        <input type="text" id="estado" class="form-control" name="estado" required>
+                                    </div>
+                                </div>*@
+
+
+
+                                <div class="col-md-6 offset-md-4">
+                                    <button type="submit" class="btn btn-primary">
+                                        INGRESAR
+                                    </button>
+                                </div>
+
+                            </form>
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+
+    </main>
+    <div class="row mb-3">
+    </div>
+    @*<script>
+
+            function soloLetras(input) {
+
+                var regex = /[^a-zA-Z]/g;
+
+                input.value = input.value.replace(regex, '');
+            }
+
+
+
+        </script>*@
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+</body>
+</html>

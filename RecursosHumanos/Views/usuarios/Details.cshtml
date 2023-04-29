@@ -1,0 +1,101 @@
+﻿@model List<Planilla.Models.usuarios>
+
+@{
+    Layout = null;
+}
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Fonts -->
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600" rel="stylesheet" type="text/css">
+
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+    <link rel="icon" href="Favicon.png">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <link href="~/Recursos/css/fondo.css" rel="stylesheet" />
+    <title>detalleusuarios</title>
+</head>
+<body>
+    @Html.Partial("menubar")
+    <div class="row mb-3">
+    </div>
+
+    <main class="my-form">
+        <div class="container fluid">
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <div class="card">
+                        <div class="card-header">Nuevo Usuario</div>
+                        <div class="card-body">
+
+                            @using (Html.BeginForm("buscar", "usuarios"))
+                            {
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label">CONSULTAR USUARIOS</label>
+                                    <div class="col-md-8 inputGroupContainer">
+                                        <div class="input-group">
+
+                                            <input id="id" name="id" placeholder="Código del usuario" class="form-control" value="" type="text"><span></span>
+                                            <hr>
+                                            <button class="btn btn-outline-secondary" type="submit">Buscar</button>
+                                        </div>
+                                    </div>
+                                </div>}
+                            <hr />
+                            <table id="datatable" class="table table-striped table-bordered" cellspacing="0" width="100%">
+                                <thead>
+                                    <tr>
+                                        <th>Codigo Usuario</th>
+                                        <th>Usuario</th>
+                                    </tr>
+                                </thead>
+                                @if (Model != null)
+                                {
+                                    foreach (var item in Model)
+                                    {
+                                        <tr>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.id_usuario)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.usuario)
+                                            </td>
+
+                                        </tr>
+                                    }
+                                }
+
+                            </table>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+
+    </main>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+</body>
+</html>
+

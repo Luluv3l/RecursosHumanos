@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="_UpgradeWizard_Files\UpgradeWizardLog.xslt"?>
+<log>
+  <event>Get project references.</event>
+  <event action="Analyze" type="Success" name="Assembly References" path="C:\Users\lulutest\Documents\Visual Studio 2022\Projects\Planilla\RecursosHumanos\Planilla.csproj" />
+  <event action="Analyze" type="Success" name="Assembly References" path="C:\Users\lulutest\Documents\Visual Studio 2022\Projects\Planilla\RecursosHumanos\packages.config" />
+  <event action="Analyze" type="Success" name="Http Handlers" path="C:\Users\lulutest\Documents\Visual Studio 2022\Projects\Planilla\RecursosHumanos\packages.config" />
+  <event action="Analyze" type="Success" name="Handlers (IIS7+)" path="C:\Users\lulutest\Documents\Visual Studio 2022\Projects\Planilla\RecursosHumanos\packages.config" />
+  <event action="Analyze" type="Success" name="Config Sections" path="C:\Users\lulutest\Documents\Visual Studio 2022\Projects\Planilla\RecursosHumanos\packages.config" />
+  <event action="Analyze" type="Success" name="Render Extensions" path="C:\Users\lulutest\Documents\Visual Studio 2022\Projects\Planilla\RecursosHumanos\packages.config" />
+  <event action="Analyze" type="Success" name="Session State Providers" path="C:\Users\lulutest\Documents\Visual Studio 2022\Projects\Planilla\RecursosHumanos\packages.config" />
+  <event action="Analyze" type="Success" name="packages.config" path="C:\Users\lulutest\Documents\Visual Studio 2022\Projects\Planilla\RecursosHumanos\packages.config" />
+  <event action="Analyze" type="Success" name="Register Directives" path="C:\Users\lulutest\Documents\Visual Studio 2022\Projects\Planilla\RecursosHumanos\Views\colaboradores\Create.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="C:\Users\lulutest\Documents\Visual Studio 2022\Projects\Planilla\RecursosHumanos\Views\colaboradores\Create.cshtml" />
+  <event action="Analyze" type="Success" name="Create.cshtml" path="C:\Users\lulutest\Documents\Visual Studio 2022\Projects\Planilla\RecursosHumanos\Views\colaboradores\Create.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="C:\Users\lulutest\Documents\Visual Studio 2022\Projects\Planilla\RecursosHumanos\Views\colaboradores\Details.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="C:\Users\lulutest\Documents\Visual Studio 2022\Projects\Planilla\RecursosHumanos\Views\colaboradores\Details.cshtml" />
+  <event action="Analyze" type="Success" name="Details.cshtml" path="C:\Users\lulutest\Documents\Visual Studio 2022\Projects\Planilla\RecursosHumanos\Views\colaboradores\Details.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="C:\Users\lulutest\Documents\Visual Studio 2022\Projects\Planilla\RecursosHumanos\Views\colaboradores\Edit.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="C:\Users\lulutest\Documents\Visual Studio 2022\Projects\Planilla\RecursosHumanos\Views\colaboradores\Edit.cshtml" />
+  <event action="Analyze" type="Success" name="Edit.cshtml" path="C:\Users\lulutest\Documents\Visual Studio 2022\Projects\Planilla\RecursosHumanos\Views\colaboradores\Edit.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="C:\Users\lulutest\Documents\Visual Studio 2022\Projects\Planilla\RecursosHumanos\Views\horas_extras\Create.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="C:\Users\lulutest\Documents\Visual Studio 2022\Projects\Planilla\RecursosHumanos\Views\horas_extras\Create.cshtml" />
+  <event action="Analyze" type="Success" name="Create.cshtml" path="C:\Users\lulutest\Documents\Visual Studio 2022\Projects\Planilla\RecursosHumanos\Views\horas_extras\Create.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="C:\Users\lulutest\Documents\Visual Studio 2022\Projects\Planilla\RecursosHumanos\Views\incapacidades\Create.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="C:\Users\lulutest\Documents\Visual Studio 2022\Projects\Planilla\RecursosHumanos\Views\incapacidades\Create.cshtml" />
+  <event action="Analyze" type="Success" name="Create.cshtml" path="C:\Users\lulutest\Documents\Visual Studio 2022\Projects\Planilla\RecursosHumanos\Views\incapacidades\Create.cshtml" />
+  <event action="Analyze" type="Success" name="Register Directives" path="C:\Users\lulutest\Documents\Visual Studio 2022\Projects\Planilla\RecursosHumanos\Views\Shared\menubar.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="C:\Users\lulutest\Documents\Visual Studio 2022\Projects\Planilla\RecursosHumanos\Views\Shared\menubar.cshtml" />
+  <event action="Analyze" type="Success" name="menubar.cshtml" path="C:\Users\lulutest\Documents\Visual Studio 2022\Projects\Planilla\RecursosHumanos\Views\Shared\menubar.cshtml" />
+  <event action="Analyze" type="Success" name="Assembly References" path="C:\Users\lulutest\Documents\Visual Studio 2022\Projects\Planilla\RecursosHumanos\Views\web.config" />
+  <event action="Analyze" type="Success" name="Http Handlers" path="C:\Users\lulutest\Documents\Visual Studio 2022\Projects\Planilla\RecursosHumanos\Views\web.config" />
+  <event action="Analyze" type="Success" name="Handlers (IIS7+)" path="C:\Users\lulutest\Documents\Visual Studio 2022\Projects\Planilla\RecursosHumanos\Views\web.config" />
+  <event action="Analyze" type="Success" name="Config Sections" path="C:\Users\lulutest\Documents\Visual Studio 2022\Projects\Planilla\RecursosHumanos\Views\web.config" />
+  <event action="Analyze" type="Success" name="Render Extensions" path="C:\Users\lulutest\Documents\Visual Studio 2022\Projects\Planilla\RecursosHumanos\Views\web.config" />
+  <event action="Analyze" type="Success" name="Session State Providers" path="C:\Users\lulutest\Documents\Visual Studio 2022\Projects\Planilla\RecursosHumanos\Views\web.config" />
+  <event action="Analyze" type="Success" name="web.config" path="C:\Users\lulutest\Documents\Visual Studio 2022\Projects\Planilla\RecursosHumanos\Views\web.config" />
+  <event action="Analyze" type="Success" name="Assembly References" path="C:\Users\lulutest\Documents\Visual Studio 2022\Projects\Planilla\RecursosHumanos\Web.config" />
+  <event action="Analyze" type="Success" name="Http Handlers" path="C:\Users\lulutest\Documents\Visual Studio 2022\Projects\Planilla\RecursosHumanos\Web.config" />
+  <event action="Analyze" type="Success" name="Handlers (IIS7+)" path="C:\Users\lulutest\Documents\Visual Studio 2022\Projects\Planilla\RecursosHumanos\Web.config" />
+  <event action="Analyze" type="Success" name="Config Sections" path="C:\Users\lulutest\Documents\Visual Studio 2022\Projects\Planilla\RecursosHumanos\Web.config" />
+  <event action="Analyze" type="Success" name="Render Extensions" path="C:\Users\lulutest\Documents\Visual Studio 2022\Projects\Planilla\RecursosHumanos\Web.config" />
+  <event action="Analyze" type="Success" name="Session State Providers" path="C:\Users\lulutest\Documents\Visual Studio 2022\Projects\Planilla\RecursosHumanos\Web.config" />
+  <event action="Analyze" type="Success" name="Web.config" path="C:\Users\lulutest\Documents\Visual Studio 2022\Projects\Planilla\RecursosHumanos\Web.config" />
+  <event action="Analyze" type="Success" name="Assembly References" path="C:\Users\lulutest\Documents\Visual Studio 2022\Projects\Planilla\RecursosHumanos\Web.Debug.config" />
+  <event action="Analyze" type="Success" name="Http Handlers" path="C:\Users\lulutest\Documents\Visual Studio 2022\Projects\Planilla\RecursosHumanos\Web.Debug.config" />
+  <event action="Analyze" type="Success" name="Handlers (IIS7+)" path="C:\Users\lulutest\Documents\Visual Studio 2022\Projects\Planilla\RecursosHumanos\Web.Debug.config" />
+  <event action="Analyze" type="Success" name="Config Sections" path="C:\Users\lulutest\Documents\Visual Studio 2022\Projects\Planilla\RecursosHumanos\Web.Debug.config" />
+  <event action="Analyze" type="Success" name="Render Extensions" path="C:\Users\lulutest\Documents\Visual Studio 2022\Projects\Planilla\RecursosHumanos\Web.Debug.config" />
+  <event action="Analyze" type="Success" name="Session State Providers" path="C:\Users\lulutest\Documents\Visual Studio 2022\Projects\Planilla\RecursosHumanos\Web.Debug.config" />
+  <event action="Analyze" type="Success" name="Web.Debug.config" path="C:\Users\lulutest\Documents\Visual Studio 2022\Projects\Planilla\RecursosHumanos\Web.Debug.config" />
+  <event action="Analyze" type="Success" name="Assembly References" path="C:\Users\lulutest\Documents\Visual Studio 2022\Projects\Planilla\RecursosHumanos\Web.Release.config" />
+  <event action="Analyze" type="Success" name="Http Handlers" path="C:\Users\lulutest\Documents\Visual Studio 2022\Projects\Planilla\RecursosHumanos\Web.Release.config" />
+  <event action="Analyze" type="Success" name="Handlers (IIS7+)" path="C:\Users\lulutest\Documents\Visual Studio 2022\Projects\Planilla\RecursosHumanos\Web.Release.config" />
+  <event action="Analyze" type="Success" name="Config Sections" path="C:\Users\lulutest\Documents\Visual Studio 2022\Projects\Planilla\RecursosHumanos\Web.Release.config" />
+  <event action="Analyze" type="Success" name="Render Extensions" path="C:\Users\lulutest\Documents\Visual Studio 2022\Projects\Planilla\RecursosHumanos\Web.Release.config" />
+  <event action="Analyze" type="Success" name="Session State Providers" path="C:\Users\lulutest\Documents\Visual Studio 2022\Projects\Planilla\RecursosHumanos\Web.Release.config" />
+  <event action="Analyze" type="Success" name="Web.Release.config" path="C:\Users\lulutest\Documents\Visual Studio 2022\Projects\Planilla\RecursosHumanos\Web.Release.config" />
+  <event action="Analyze" type="Success" name="Planilla" path="C:\Users\lulutest\Documents\Visual Studio 2022\Projects\Planilla\RecursosHumanos\Planilla.csproj" />
+  <event action="Analyze" type="Success" name="RecursosHumanos" path="C:\Users\lulutest\Documents\Visual Studio 2022\Projects\Planilla\RecursosHumanos.sln" />
+</log>

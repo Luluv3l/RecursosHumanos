@@ -1,0 +1,210 @@
+﻿@model List<Planilla.Models.horas_extras>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Fonts -->
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600" rel="stylesheet" type="text/css">
+
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+    <link rel="icon" href="Favicon.png">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <link href="~/Recursos/css/fondo.css" rel="stylesheet" />
+    <title>horasextra</title>
+</head>
+<body>
+    @Html.Partial("menubar")
+    @*<div class="row mb-3">
+        </div>*@
+
+    @if (TempData["SuccedMensaje"] != null)
+    {
+        <div class="alert alert-success">@TempData["SuccedMensaje"]</div>
+    }
+
+    @if (TempData["ErrorMensaje1"] != null)
+    {
+        <div class="alert alert-danger">@TempData["ErrorMensaje1"]</div>
+    }
+    @if (TempData["ErrorMensaje"] != null)
+    {
+        <div class="alert alert-info">@TempData["ErrorMensaje"]</div>
+    }
+    <main class="my-form">
+        <div class="container fluid">
+            <div class="row justify-content-center">
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-header text-white" style="background-color: #2980B9;">BUSCAR COLABORADOR</div>
+                        <div class="card-body">
+                            @using (Html.BeginForm("buscar", "horas_extras", FormMethod.Post))
+                            {
+                                @Html.AntiForgeryToken()
+
+
+                                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label">BUSCAR COLABORADOR</label>
+                                    <div class="col-md-8 inputGroupContainer">
+                                        <div class="input-group">
+
+                                            <input id="id" name="id" placeholder="Digite número de cédula del colaborador..." class="form-control" value="" type="text" required><span></span>
+                                            <hr>
+
+                                            <button class="btn btn-outline-secondary" type="submit">Buscar</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+
+                            @if (Model != null)
+                            {
+
+                                foreach (var horas_extras in Model)
+                                {
+                                    <div hidden class="form-group">
+                                        <label for="name" class="col-md-4 col-form-label text-md-left">CÓDIGO</label>
+                                        <div class="col-md-6">
+                                            @Html.EditorFor(model => horas_extras.id_colaborador, new { htmlAttributes = new { @class = "form-control", id = "id_colaborador", name = "id_colaborador" } })
+                                            @Html.ValidationMessageFor(model => horas_extras.id_colaborador, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="name" class="col-md-4 col-form-label text-md-left">NÚMERO DE CÉDULA</label>
+                                        <div class="col-md-6">
+                                            @Html.EditorFor(model => horas_extras.identificacion, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => horas_extras.identificacion, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="name" class="col-md-4 col-form-label text-md-left">NOMBRE</label>
+                                        <div class="col-md-6">
+                                            @Html.EditorFor(model => horas_extras.nombre, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => horas_extras.nombre, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="name" class="col-md-4 col-form-label text-md-left">APELLIDOS</label>
+                                        <div class="col-md-6">
+                                            @Html.EditorFor(model => horas_extras.apellido_1, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => horas_extras.apellido_1, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                }
+
+                            }
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="row mb-3">
+
+            </div>
+
+            <form action="@Url.Action("Create", "horas_extras")" method="post">
+                <div class="card text-center">
+                    <div class="card-header text-white" style="background-color: #2980B9;">
+                        CALCULAR HORAS EXTRA
+                    </div>
+                    <div class="row mb-3">
+                    </div>
+
+                    <input type="hidden" name="id_colaborador" id="id_colaborador_hidden" value="" />
+
+                    <div class="row mb-3 justify-content-center">
+                        <label for="HORAS" class="col-sm-2 col-form-label">TIPO DE PAGO HORAS</label>
+                        <div class="col-sm-4">
+                            <select id="miDropdown5" name="tipohora" class="form-control" required>
+                                <option value="">SELECCIONE </option>
+                                <option value="1">SENCILLA</option>
+                                <option value="2">DOBLE</option>
+                                <option value="3">FERIADO</option>
+
+
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row mb-3 justify-content-center">
+                        <label for="HORAS" class="col-sm-2 col-form-label">HORAS EXTRAS</label>
+                        <div class="col-sm-4">
+                            <select id="miDropdown6" name="cantdiadhora" class="form-control" required>
+                                <option value="">SELECCIONE LA CANTIDAD DE HORAS</option>
+                                <option value="1">1 HORA</option>
+                                <option value="2">2 HORAS</option>
+                                <option value="3">3 HORAS</option>
+                                <option value="4">4 HORAS</option>
+                                <option value="5">5 HORAS</option>
+                                <option value="6">6 HORAS</option>
+                                <option value="7">7 HORAS</option>
+                                <option value="8">8 HORAS</option>
+                                <option value="9">9 HORAS</option>
+                                <option value="10">10 HORAS</option>
+                                <option value="11">11 HORAS</option>
+                                <option value="12">12 HORAS</option>
+
+                            </select>
+                        </div>
+                    </div>
+
+
+
+                    <div class="row mb-3  justify-content-center">
+                        <label for="inputDate" class="col-sm-2 col-form-label">FECHA INICIAL</label>
+                        <div class="col-sm-4">
+                            <input type="date" class="form-control" id="date" name="fecha_i" required>
+                        </div>
+                        @*<label for="inputDate" class="col-sm-1 col-form-label">FECHA FINAL</label>
+                            <div class="col-sm-4">
+                                <input type="date" class="form-control" id="date" name="fecha_f">
+                            </div>*@
+                    </div>
+
+
+
+                    <div class="card-footer text-muted">
+                        <button class="btn btn-primary" type="submit">APLICAR</button>
+                        @*<a href="@Url.Action("Create,permisos")" class="btn btn-primary">APLICAR</a>*@
+                    </div>
+                </div>
+            </form>
+        </div>
+    </main>
+
+
+
+    <script>
+        // Obtener el valor del EditorFor y asignarlo al campo "hidden" del segundo formulario
+        var id_colaborador = $('#id_colaborador').val();
+        $('#id_colaborador_hidden').val(id_colaborador);
+    </script>
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+</body>
+</html>
+
